@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Data</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #8e95e992, #58b2fb94);
+            color: #333;
+            font-family: 'Cambria', serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        .logo {
+            position: absolute;
+            top: 5px;
+            left: 20px;
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            padding-bottom: 5px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 5px 5px 5px rgba(28, 144, 253, 0.623);
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        h1 {
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Cambria', serif;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-family: 'Cambria', serif;
+        }
+
+        input[type="text"], input[type="submit"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+            font-family: 'Cambria', serif;
+        }
+
+        input[type="text"] {
+            transition: border 0.3s ease-in-out;
+        }
+
+        input[type="text"]:focus {
+            border: 1px solid #007bff;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #ffffff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            font-family: 'Cambria', serif;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #studentSaved {
+            color: #28a745;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-family: 'Cambria', serif;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        tr:hover td {
+            background-color: #e3f2fd;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            input[type="text"], input[type="submit"] {
+                font-size: 14px;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- College logo section -->
+        <div class="logo">
+            <img src="logo.png" alt="College Logo">
+        </div>
+        <h1>Save and View Student Data</h1>
+        <div class="form-group">
+            <label for="studentid">Student ID:</label>
+            <input type="text" name="studentid" id="studentid">
+        </div>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div class="form-group">
+            <label for="class">Class:</label>
+            <input type="text" name="class" id="class">
+        </div>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="text" name="age" id="age">
+        </div>
+        <input type="submit" id="savestudent" value="Save Student Data">
+        <p id="studentSaved"></p>
+        <input type="submit" id="getstudents" value="View all Students">
+        <div id="showStudents">
+            <table id="studentTable">
+                <colgroup>
+                    <col style="width:25%">
+                    <col style="width:25%">
+                    <col style="width:25%">
+                    <col style="width:25%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>Class</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Student data will be displayed here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+</body>
+</html>
